@@ -1,5 +1,14 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sping" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Le
+  Date: 1/2/2016
+  Time: 5:14 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,24 +21,12 @@
     <title>Carousel Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <%--    <link href=<c:url value=static/css/bootstrap.css />" rel="stylesheet">--%>
+    <link href="<sping:url value="/css/bootstrap.min.css" />" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <%--    <spring:url value="/css/main.css" var="springCss" />--%>
-    <spring:url value="/css/bootstrap.min.css" var="bootstrapmin" />
-    <link href="${bootstrapmin}" rel="stylesheet" />
 
-    <spring:url value="/css/carousel.css" var="carousel" />
-    <link href="${carousel}" rel="stylesheet" />
-
-    <spring:url value="/js/jquery-1.11.3.min.js" var="jquery" />
-    <spring:url value="/js/bootstrap.js" var="bootstrapJs" />
-
-    <%--    <c:url value="/css/carousel.css" var="carousel"/>--%>
-    <%--    <link href="${carousel}" rel="stylesheet"/>--%>
-    <%--    <link href="static/css/carousel.css" rel="stylesheet">--%>
 </head>
-
+<!-- NAVBAR
+================================================== -->
 <body>
 <div class="navbar-wrapper">
     <div class="container">
@@ -71,59 +68,3 @@
 
     </div>
 </div>
-
-
-<div class="container-wrapper">
-    <div class="container">
-        <div class="page-header">
-            <h1>All Products</h1>
-
-            <p class="lead">Checkout all the awesome products available now!</p>
-        </div>
-
-        <table class="table table-striped table-hover">
-            <thead>
-            <tr class="bg-success">
-                <th>Photo Thumb</th>
-                <th>Product Name</th>
-                <th>Category</th>
-                <th>Condition</th>
-                <th>Price</th>
-                <th>Details</th>
-            </tr>
-            </thead>
-            <c:forEach items="${books}" var="book">
-                <tr>
-                    <td><img src="#" alt="image"/></td>
-                    <td>${book.name}</td>
-                    <td>${book.name}</td>
-                    <td>${book.name}</td>
-                    <td>tbd</td>
-                    <td>
-                        <c:url value="/book-view/${book.id}" var="bookView" />
-                        <a href="${bookView}">
-                        Details
-                        </a>
-                    </td>
-                </tr>
-            </c:forEach>
-        </table>
-
-        <!-- FOOTER -->
-        <footer>
-            <p class="pull-right"><a href="#">Back to top</a></p>
-
-            <p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-        </footer>
-    </div>
-
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src=${jquery}><\/script>')</script>
-<script src=${bootstrapJs}></script>
-</body>
-
-
-
-</html>

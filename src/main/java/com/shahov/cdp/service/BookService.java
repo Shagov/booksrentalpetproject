@@ -21,4 +21,8 @@ public class BookService {
         return bookRepository.getAllBooksAvailable();
     }
 
+    public Book getBookById(String id){
+        long idToGet = Long.parseLong(id);
+        return bookRepository.findById(idToGet);
+    }
 }
